@@ -4,5 +4,5 @@ list=$(sudo -u foreman psql -d foreman -t -c 'select katello_content_view_versio
 for i in $list
 do
   echo "deleting cv_version id $i"
-  hammer -u admin -p redhat content-view version delete --id $i
+  hammer content-view version delete --id $i
 done
